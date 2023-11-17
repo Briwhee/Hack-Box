@@ -1,0 +1,18 @@
+#Use 4gb ram and 2 CPU core VM - Ubuntu 20.04 Works
+
+sudo dd if=/dev/zero bs=1M count=1024 of=/mnt/1GiB.swap
+sudo chmod 600 /mnt/1GiB.swap
+sudo mkswap /mnt/1GiB.swap
+sudo swapon /mnt/1GiB.swap
+echo '/mnt/1GiB.swap swap swap defaults 0 0' | sudo tee -a /etc/fstab
+wget https://kasm-static-content.s3.amazonaws.com/kasm_release_1.10.0.238225.tar.gz
+tar -xf kasm_release_1.10.0.238225.tar.gz
+sudo bash kasm_release/install.sh
+
+#Save following from Terminal:
+Kasm UI Login Credentials
+
+#Add Kali-
+Check images. In docker run config, type {"user":"root"} for root access.
+When running  use: su - 
+To change to root
